@@ -1,5 +1,20 @@
+body{
+  background-color: rgb(34, 80, 30);
+  color: white;
+}
 .banner{
   background: linear-gradient(45deg, rgb(11, 20, 11), rgb(59, 32, 95));
   min-height: 100vh;
   color: rgb(35, 243, 63);
+}
+.achievement{
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.achievement h2{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.achievement img{
 }

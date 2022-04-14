@@ -1,18 +1,15 @@
 import './App.css';
+import Achievements from './components/Achivements';
 import Banner from './components/Banner';
-import {Editor, EditorState} from 'draft-js';
-import 'draft-js/dist/Draft.css';
-import { useState } from 'react';
+import Contacts from './components/Contacts';
 
 
 function App() {
-  const [editorState, setEditorState] = useState(
-    () => EditorState.createEmpty(),
-  );
   return (
     <>
-    <Editor editorState={editorState} onChange={setEditorState} />
       <Banner />
+      {/* <Achievements />
+      <Contacts /> */}
     </>
   );
 }

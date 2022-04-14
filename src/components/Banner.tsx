@@ -4,26 +4,41 @@ import Form from "./Form";
 
 
 export default function Banner() { 
-    const today = new Date();
     const [diffMs, setDiffMs] = useState(0)
     const day = Math.floor(diffMs / (1000*60*60*24)); // day
     const hour = Math.floor((diffMs % 86400000) / 3600000); // hours
     const minute = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
     const second = Math.round((((diffMs % 86400000) % 3600000) %  60000) / 1000); // minutes
 
+    const currentTime = Date.now();
+    const eidDay = Date.UTC(2022, 5, 3);
+    const difference = eidDay - currentTime;
+    const sum = currentTime + difference;
+
+    console.log(new Date(currentTime + difference).getDate());
+
+    const fullDate = new Date(currentTime + difference);
+    const fullHour = fullDate.getHours();
+
+    console.log(fullHour, fullDate);
+    
+    
     
 
-    useEffect(() => {
-        let myInterval = setInterval(() => {
-            const today : Date = new Date();
-            const times : number = today.getTime()
+    
+
+
+    // useEffect(() => {
+    //     let myInterval = setInterval(() => {
+    //         const today : Date = new Date();
+    //         const times : number = today.getTime()
             
-            setDiffMs(times - 1584208801000)
-        }, 1000)
-        return () => {
-            clearInterval(myInterval);
-        }
-    }, [])
+    //         setDiffMs(times - 1584208801000)
+    //     }, 1000)
+    //     return () => {
+    //         clearInterval(myInterval);
+    //     }
+    // }, [])
     
     return (
         <section className = 'banner'>
@@ -50,7 +65,6 @@ export default function Banner() {
                                         <span className="text-white">{second} second </span> </h2>  
                                     </div>
                                 }
-                                <Form />
                             </div>
                         </div>
                     </div>
